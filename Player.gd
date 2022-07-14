@@ -51,7 +51,10 @@ func _process(delta):
 func _on_Player_area_entered(area):
 	if area.is_in_group("coins"):
 		area.pickup()
-		emit_signal("pickup")
+		emit_signal("pickup","coin")
 	if area.is_in_group("obstacles"):
 		emit_signal("hurt")
 		die()
+	if area.is_in_group("powerup"):
+		area.pickup()
+		emit_signal("pickup", "powerup")
