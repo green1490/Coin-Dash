@@ -1,10 +1,10 @@
 extends Node2D
 
 export (PackedScene) var Coin
-export (int) var playtime
+export (int) var playtime = 10
 var level
-var score = 0
-var time_left = 60
+var score:int = 0
+var time_left:int = 0
 var screensize = Vector2()
 var playing = false
 
@@ -46,7 +46,6 @@ func _on_Player_hurt():
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	randomize()
-	
 	screensize = get_viewport().get_visible_rect().size
 	$Player.screensize = screensize
 	$Player.hide()
