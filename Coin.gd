@@ -7,7 +7,7 @@ func pickup():
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$Timer.wait_time = rand_range(3,8)
+	$Timer.wait_time = rand_range(1, 5)
 	$Timer.start()
 	$Tween.interpolate_property($AnimatedSprite, 'scale',
 	$AnimatedSprite.scale,
@@ -33,3 +33,5 @@ func _on_Tween_tween_completed(_object, _key):
 func _on_Timer_timeout():
 	$AnimatedSprite.frame = 0
 	$AnimatedSprite.play()
+
+
