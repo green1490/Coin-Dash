@@ -30,4 +30,5 @@ speed = 200
 [node name="GameTimer" type="Timer" parent="."]
 
 [connection signal="start_game" from="HUD" to="." method="new_game"]
+[connection signal="pickup" from="Player" to="." method="_on_Player_pickup"]
 [connection signal="timeout" from="GameTimer" to="." method="_on_GameTimer_timeout"]
